@@ -1,0 +1,18 @@
+/** @format */
+
+.timeRows {
+	width: 100%;
+}
+.timeRow {
+	display: grid;
+	grid-template-columns: 10% 90%;
+	text-align: left;
+	border-bottom: 1px solid #c7c7c7;
+}
+.time {
+	padding: 2rem 0 0.5rem;
+}
+.event {
+	padding: 2rem 1rem 0.5rem;
+	border-left: 1px solid #c7c7c7;
+}

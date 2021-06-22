@@ -1,0 +1,28 @@
+/** @format */
+
+.container {
+	display: grid;
+}
+.weekNamesWrapper {
+	display: grid;
+	grid-template-columns: repeat(8, minmax(100px, 1fr));
+	// border-left: 1px solid #c7c7c770;
+}
+.headerbottom {
+	padding-top: 0.5rem;
+}
+.weekNames {
+	padding: 1rem 0rem;
+	border-right: 1px solid #c7c7c770;
+	border-top: 1px solid #c7c7c770;
+}
+.monthDates {
+	cursor: pointer;
+	padding: 0.5rem 0rem 3rem;
+	border-right: 1px solid #c7c7c770;
+	border-bottom: 1px solid #c7c7c770;
+}
+.time {
+	border-right: 1px solid #c7c7c770;
+	padding: 3rem 0rem 0.5rem;
+}
