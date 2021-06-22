@@ -1,20 +1,21 @@
 /** @format */
 
 .toggleButton {
-	margin: 1rem 0rem;
 	padding: 0.5rem 2rem;
 	border-radius: 0;
 	border: none;
-	border-top: 2px solid #7c7c7c;
-	border-bottom: 2px solid #7c7c7c;
-	background-color: #c7c7c7;
+	border-top: 2px solid #d5adc8;
+	border-bottom: 2px solid #d5adc8;
 	cursor: pointer;
+	color: white;
+	text-transform: capitalize;
+	font-weight: 500;
 	&:hover {
 		// transform: scale(1.01);
 	}
 	&:nth-child(2) {
-		border-left: 2px solid #7c7c7c;
-		border-right: 2px solid #7c7c7c;
+		border-left: 2px solid white;
+		border-right: 2px solid white;
 	}
 	&:first-child {
 		border-top-left-radius: 15px;
@@ -24,9 +25,18 @@
 		border-top-right-radius: 15px;
 		border-bottom-right-radius: 15px;
 	}
+	background-color: #d5adc8;
+	background-image: linear-gradient(0deg, #d5adc8 0%, #ff8489 80%);
 }
 
 .toggleButtons {
 	justify-content: flex-end;
-	border-radius: 15px;
+	text-align: end;
+	padding: 1rem 0;
+
+	// border-radius: 15px;
+}
+
+.selected {
+	color: black;
 }

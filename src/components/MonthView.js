@@ -8,12 +8,10 @@ export default function MonthView(props)
 
 
     return (
-        <div>
-            <div className={style.container}>
-                <div className={style.weekNamesWrapper}>
-                    {header.map((w) => <div className={style.weekNames}>{w}</div>)}
-                    {monthDates.map((weeks) => weeks?.map((date)=>(<div className={style.monthDates}>{date.format("DD")}</div>)))}
-                </div>
+        <div className={style.container}>
+            <div className={style.weekNamesWrapper}>
+                {header.map((w) => <div className={style.weekNames}>{w}</div>)}
+                {monthDates.map((weeks) => weeks?.map((date)=>(<div className={style.monthDates}>{date.format("DD")}</div>)))}
             </div>
         </div>
     )

@@ -5,9 +5,14 @@ import style from '../styles/calendar.module.scss'
 import moment from 'moment';
 
 import ToggleButtons from './ToggleButtons';
+import Modal from './Modal';
 import MonthView from './MonthView';
 import WeekView from './WeekView';
 import DayView from './DayView';
+
+import SideBar from './SideBar';
+
+
 
 export default function Calendar() {
     const today = moment();
@@ -18,28 +23,39 @@ export default function Calendar() {
     
 	const [monthDates, setMonthDates] = useState([])
 	const [viewType, setViewType] = useState("month");
-
+	const [addBatchModal, setAddBatchModal] = useState(false);
 	
     useEffect(() =>{
         setMonthDates(getCalender());
 	}, []);
 	
-	console.log("getWeekNumber",getWeekNumber, monthDates, today.week(), )
 	
 	return (
 		<div className={style.container}>
-			<ToggleButtons setViewType={setViewType}/>
-			{viewType==="month" && <MonthView header={weeekDayNames} monthDates={monthDates}  />}
-			{viewType === "week" && <WeekView
-				header={weeekDayNames}
-				weekDates={monthDates[getWeekNumber]}
-				allDayhours={allDayhours}
-			/>}
-			{viewType === "day" && <DayView
-				weeekDayNames={weeekDayNames}
-				date={today}
-				allDayhours={allDayhours}
-			/>}
+			<Modal open={addBatchModal} setOpen={setAddBatchModal} />
+			<div className={style.grids}>
+				<div className={style.sideBarcontainer}>
+					<SideBar header={weeekDayNames} monthDates={monthDates} />
+				</div>
+				<div  className={style.rightContainer}>
+					<ToggleButtons viewType={viewType} setViewType={setViewType} />
+					<div className={style.calendarView}>
+						{viewType==="month" && <MonthView header={weeekDayNames} monthDates={monthDates}  />}
+						{viewType === "week" && <WeekView
+							header={weeekDayNames}
+							weekDates={monthDates[getWeekNumber]}
+							allDayhours={allDayhours}
+						/>}
+						{viewType === "day" && <DayView
+							weeekDayNames={weeekDayNames}
+							date={today}
+							allDayhours={allDayhours}
+						/>}
+					</div>
+					
+				</div>
+			</div>
+			
 		</div> 
 	)
 }

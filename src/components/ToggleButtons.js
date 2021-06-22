@@ -1,21 +1,29 @@
 import React from 'react'
 import style from '../styles/global.module.scss'
+import cx from "classnames";
 
 export default function ToggleButtons(props)
 {
-    const { setViewType } = props;
+    const {viewType,  setViewType } = props;
     const handleOnclick = ({ target}) =>{
         const {id } = target;
         setViewType(id);
     }
 
-
+    const toggleButtons = ["day", "week", "month"]
 
     return (
         <div className={style.toggleButtons}>
-            <button id="day" onClick={handleOnclick} className={style.toggleButton}>Day</button>
-            <button id="week" onClick={handleOnclick} className={style.toggleButton}>Week</button>
-            <button id="month" onClick={handleOnclick} className={style.toggleButton}>Month</button>
+            {toggleButtons.map((id) => (
+                <button
+                    id={id}
+                    onClick={handleOnclick}
+                    className={cx(style.toggleButton, { [style.selected]: viewType === id })}
+                >
+                    {id}
+                </button>))
+            }
+
         </div>
     )
 }
