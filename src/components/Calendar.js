@@ -5,6 +5,7 @@ import style from '../styles/calendar.module.scss'
 import moment from 'moment';
 
 import ToggleButtons from './ToggleButtons';
+import Header from './Header';
 import Modal from './Modal';
 import MonthView from './MonthView';
 import WeekView from './WeekView';
@@ -33,6 +34,7 @@ export default function Calendar() {
 	return (
 		<div className={style.container}>
 			<Modal open={addBatchModal} setOpen={setAddBatchModal} />
+			<Header />
 			<div className={style.grids}>
 				<div className={style.sideBarcontainer}>
 					<SideBar header={weeekDayNames} monthDates={monthDates} />

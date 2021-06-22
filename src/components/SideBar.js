@@ -14,6 +14,7 @@ export default function SideBar(props) {
                 <button className={style.btn}>
                     <FontAwesomeIcon icon={faPlusCircle} />Add Teacher</button>
             </div>
+            <input placeholder="Search teachers" className={style.input} />
             <SmallCalnder {...props}/>
         </div>
     )

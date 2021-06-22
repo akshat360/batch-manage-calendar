@@ -1,0 +1,9 @@
+/** @format */
+
+.wrapper {
+	box-shadow: -2px 10px 24px -5px rgba(0, 0, 0, 0.1);
+	& > div {
+		display: grid;
+		grid-template-columns: 20% 60% 20%;
+	}
+}
