@@ -21,11 +21,11 @@ export default function Calendar() {
 
 	const weeekDayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thrusday", "Friday", "Saturday"];
 	const allDayhours = getDayHours();
-    
+	
 	const [monthDates, setMonthDates] = useState([])
 	const [viewType, setViewType] = useState("month");
 	const [addBatchModal, setAddBatchModal] = useState(false);
-	
+	const [selectedDate, setSelectedDate] = useState(today);
     useEffect(() =>{
         setMonthDates(getCalender());
 	}, []);
@@ -34,7 +34,7 @@ export default function Calendar() {
 	return (
 		<div className={style.container}>
 			<Modal open={addBatchModal} setOpen={setAddBatchModal} />
-			<Header />
+			<Header date={selectedDate} viewType={viewType}/>
 			<div className={style.grids}>
 				<div className={style.sideBarcontainer}>
 					<SideBar header={weeekDayNames} monthDates={monthDates} />
