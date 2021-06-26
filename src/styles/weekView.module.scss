@@ -5,8 +5,9 @@
 }
 .weekNamesWrapper {
 	display: grid;
-	grid-template-columns: repeat(8, minmax(100px, 1fr));
+	grid-template-columns: repeat(8, 120px);
 	// border-left: 1px solid #c7c7c770;
+	position: relative;
 }
 .headerbottom {
 	padding-top: 0.5rem;
@@ -25,4 +26,25 @@
 .time {
 	border-right: 1px solid #c7c7c770;
 	padding: 3rem 0rem 0.5rem;
+}
+
+.weekEvent {
+	position: absolute;
+	left: 125px;
+	border-radius: 5px;
+	color: white;
+	border: 1px solid #ddd;
+	background: #4568dc; /* fallback for old browsers */
+	background: -webkit-linear-gradient(
+		to right,
+		#b06ab3,
+		#4568dc
+	); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(
+		to right,
+		#b06ab3,
+		#4568dc
+	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	width: 110px;
+	min-height: 10px;
 }

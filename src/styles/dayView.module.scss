@@ -2,12 +2,14 @@
 
 .timeRows {
 	width: 100%;
+	position: relative;
 }
 .timeRow {
 	display: grid;
-	grid-template-columns: 10% 90%;
+	grid-template-columns: 100px 90%;
 	text-align: left;
 	border-bottom: 1px solid #c7c7c7;
+	height: 60px;
 }
 .time {
 	padding: 2rem 0 0.5rem;
@@ -15,4 +17,24 @@
 .event {
 	padding: 2rem 1rem 0.5rem;
 	border-left: 1px solid #c7c7c7;
+}
+.dayEvent {
+	position: absolute;
+	left: 110px;
+	border-radius: 5px;
+	color: white;
+	border: 1px solid #ddd;
+	background: #4568dc; /* fallback for old browsers */
+	background: -webkit-linear-gradient(
+		to right,
+		#b06ab3,
+		#4568dc
+	); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(
+		to right,
+		#b06ab3,
+		#4568dc
+	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	width: 60vw;
+	min-height: 10px;
 }
